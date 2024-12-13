@@ -4,15 +4,16 @@ import Seo from "../components/seo"
 import Hero from "../components/Hero"
 import About from "../components/About"
 import Portfolio from "../components/Portfolio"
-import Awards from "../components/Awards"
+import Posts from "../components/Posts"
 import Contact from "../components/Contact"
+import Schedule from "../components/Schedule"
 
 const IndexPage = () => (
   <Layout>
     <Hero />
     <About />
     <Portfolio />
-    <Awards />
+    <Posts />
     <Contact />
   </Layout>
 )

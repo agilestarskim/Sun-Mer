@@ -1,47 +1,41 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "./header.module.css"
-import MobileMenu from "./MobileMenu"
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const [isScrolled, setIsScrolled] = React.useState(false)
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <>
-      <header className={styles.header}>
-        <div className={styles.content}>
-          <div className={styles.logoWrapper}>
-            <div className={styles.logoBox}>C</div>
-            <Link to="/" className={styles.logo}>
-              Sun&Mer
-            </Link>
-          </div>
-          <nav className={styles.nav}>
-            <Link to="/">Home</Link>
-            <Link to="/service">Service</Link>
-            <Link to="/projects">Projects</Link>
-            <Link to="/contact">Contact Us</Link>
-          </nav>
-          <button 
-            className={styles.bookCall}
-            onClick={() => {}}
-          >
-            BOOK A CALL
-            <span className={styles.arrow}>→</span>
-          </button>
-          <button 
-            className={styles.menuButton}
-            onClick={() => setIsMenuOpen(true)}
-          >
-            ☰
-          </button>
-        </div>
-      </header>
-      <MobileMenu 
-        isOpen={isMenuOpen} 
-        onClose={() => setIsMenuOpen(false)} 
-      />
-    </>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+      <div className={styles.headerContent}>
+        <Link to="/" className={styles.logoContainer}>
+          <StaticImage
+            src="../images/logo/logo.png"
+            alt="Logo"
+            className={styles.logoImage}
+            width={30}
+            height={30}
+          />
+          <span className={styles.logoText}>SUN & MER</span>
+        </Link>
+        <nav className={styles.nav}>
+          <Link to="/works">Works</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+        </nav>
+        <button className={styles.menuButton}>Menu</button>
+      </div>
+    </header>
   )
 }
 

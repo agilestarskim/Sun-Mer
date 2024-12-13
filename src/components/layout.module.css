@@ -1,12 +1,10 @@
 .mainContainer {
   width: 100%;
-  max-width: 1400px; /* 최대 너비 설정 */
-  margin: 0 auto;
-  padding: 0 5rem; /* 좌우 여백 */
+  overflow-x: hidden;
 }
 
 @media (max-width: 768px) {
   .mainContainer {
-    padding: 0 1.5rem;
+    width: 100%;
   }
 } 
