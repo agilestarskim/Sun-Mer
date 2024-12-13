@@ -6,7 +6,7 @@ const Hero = () => (
   <section className={styles.hero}>
     <div className={styles.imageContainer}>
       <StaticImage
-        src="../../images/hero/hero-main.jpg"
+        src="../../images/hero/hero-main.JPG"
         alt="Hero"
         className={styles.heroImage}
         placeholder="blurred"
