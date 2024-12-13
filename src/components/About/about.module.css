@@ -1,0 +1,38 @@
+.about {
+  padding: var(--space-6);
+  background: #fff;
+  color: #000;
+  text-align: center;
+}
+
+.text {
+  font-size: 2rem;
+  line-height: 1.4;
+  max-width: 800px;
+  margin: 0 auto var(--space-5);
+}
+
+.text span {
+  color: #999;
+}
+
+.button {
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid #000;
+  background: transparent;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: #000;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .text {
+    font-size: 1.5rem;
+  }
+} 
