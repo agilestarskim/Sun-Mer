@@ -92,5 +92,6 @@ module.exports = {
         icon: `${__dirname}/src/images/logo/logo.PNG`,
       },
     },
+    'gatsby-plugin-netlify',
   ],
 }
