@@ -1,0 +1,43 @@
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* 화면 전체 높이 */
+  background-color: #000; /* 배경색 */
+  color: #fff; /* 텍스트 색상 */
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.message {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.suggestion {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 링크 간 간격 */
+}
+
+.link {
+  color: #1e90ff; /* 링크 색상 */
+  text-decoration: none; /* 밑줄 제거 */
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #ff6347; /* 호버 시 색상 변경 */
+} 

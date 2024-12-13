@@ -1,18 +1,12 @@
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2rem 5rem;
-  z-index: 100;
-  background: transparent;
-  transition: all 0.3s ease;
-}
-
-.scrolled {
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
   padding: 1.5rem 5rem;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
 }
 
 .headerContent {
@@ -46,19 +40,19 @@
   gap: 3rem;
 }
 
-.nav a {
+.nav button {
   color: #fff;
   text-decoration: none;
   font-size: 1rem;
   transition: opacity 0.3s;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
-.nav a:hover {
+.nav button:hover {
   opacity: 0.7;
-}
-
-.menuButton {
-  display: none;
 }
 
 @media (max-width: 768px) {
@@ -66,20 +60,18 @@
     padding: 1.5rem 2rem;
   }
 
-  .scrolled {
-    padding: 1rem 2rem;
-  }
-
   .nav {
     display: none;
   }
+
+  .logoImage {
+    width: 24px;
+    height: 24px;
+  }
   
-  .menuButton {
-    display: block;
-    background: none;
-    border: none;
+  .logoText {
+    font-size: 1.2rem;
+    font-weight: 700;
     color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
   }
 }

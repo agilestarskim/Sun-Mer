@@ -11,29 +11,16 @@
 
 .instagramEmbed {
   display: flex;
-  overflow-x: auto;  /* 가로 스크롤 활성화 */
-  gap: 2rem;  /* 포스트 간 간격 */
-  padding-bottom: 1rem;  /* 스크롤바와 포스트 간 간격 */
-  scrollbar-width: thin;  /* Firefox에서 스크롤바 두께 조정 */
-  scrollbar-color: #888 #333;  /* Firefox에서 스크롤바 색상 조정 */
+  overflow-x: auto;
+  gap: 2rem;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #000;
 }
 
-/* Chrome, Safari, Edge에서 스크롤바 스타일링 */
-.instagramEmbed::-webkit-scrollbar {
-  height: 8px;  /* 스크롤바 높이 */
+.postContainer {
+  flex: 0 0 auto;
+  width: 328px;
+  position: relative;
 }
 
-.instagramEmbed::-webkit-scrollbar-thumb {
-  background-color: #888;  /* 스크롤바 색상 */
-  border-radius: 10px;  /* 스크롤바 모서리 둥글게 */
-}
-
-.instagramEmbed::-webkit-scrollbar-track {
-  /* background: #333;  스크롤바 트랙 색상 */
-}
-
-.instagramEmbed blockquote {
-  flex: 0 0 auto;  /* 각 포스트가 고정된 너비를 가지도록 설정 */
-  width: 300px;  /* 포스트의 너비 설정 (필요에 따라 조정 가능) */
-  margin: 0;  /* 기본 마진 제거 */
-}

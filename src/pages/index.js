@@ -6,7 +6,6 @@ import About from "../components/About"
 import Portfolio from "../components/Portfolio"
 import Posts from "../components/Posts"
 import Contact from "../components/Contact"
-import Schedule from "../components/Schedule"
 
 const IndexPage = () => (
   <Layout>
@@ -18,6 +17,6 @@ const IndexPage = () => (
   </Layout>
 )
 
-export const Head = () => <Seo title="Photography Portfolio" />
+export const Head = () => <Seo/>
 
 export default IndexPage

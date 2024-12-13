@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import * as styles from "./portfolio.module.css"
 
 const VideoCard = ({ thumbnailUrl, title, videoId }) => {
@@ -37,17 +38,29 @@ const VideoCard = ({ thumbnailUrl, title, videoId }) => {
 }
 
 const Portfolio = () => {
-  const videos = [
-    { id: 1, title: "사랑으로 우리는", videoId: "xl-GcYQ1N5g" },
-    { id: 2, title: "d!ve", videoId: "pJWD9mWj7V8" },
-    { id: 3, title: "탈(Higher)", videoId: "tm4_dSk3Hg4" },
-    { id: 4, title: "bonnie & clyde", videoId: "rE7wrUSAOXk" },
-    { id: 5, title: "Heart Hurts", videoId: "gg_ICIzyQgc" },    
-    { id: 6, title: "편집증 (Paranoia)", videoId: "BivYmP3YMxk" },
-  ]
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          videos {
+            id
+            title
+            videoId
+          }
+          socialLinks {
+            name
+            url
+          }
+        }
+      }
+    }
+  `)
+
+  const videos = data.site.siteMetadata.videos
+  const socialLinks = data.site.siteMetadata.socialLinks
 
   return (
-    <section className={styles.portfolio}>
+    <section id="works" className={styles.portfolio}>
       <div className={styles.content}>
         <h2 className={styles.title}>Summer Sessions</h2>
         <div className={styles.grid}>
@@ -62,18 +75,17 @@ const Portfolio = () => {
         <div className={styles.socialSection}>
           <p className={styles.socialText}>Discover More Tracks</p>
           <div className={styles.socialLinks}>
-            <a href="https://www.youtube.com/channel/UCElCCdSKstO6m9nhhgHKNdw" target="_blank" rel="noopener noreferrer" className={styles.socialButton}>
-              YouTube
-            </a>
-            <a href="https://open.spotify.com/artist/1GbmCdNlnSjdELYPmh7RZM" target="_blank" rel="noopener noreferrer" className={styles.socialButton}>
-              Spotify
-            </a>
-            <a href="https://www.tiktok.com/@sunandmer" target="_blank" rel="noopener noreferrer" className={styles.socialButton}>
-              TikTok
-            </a>
-            <a href="https://soundcloud.com/sunandmer" target="_blank" rel="noopener noreferrer" className={styles.socialButton}>
-              SoundCloud
-            </a>
+            {socialLinks.map((link, index) => (
+              <a 
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialButton}
+              >
+                {link.name}
+              </a>
+            ))}
           </div>
         </div>
       </div>

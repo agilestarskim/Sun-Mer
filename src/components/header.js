@@ -4,23 +4,19 @@ import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "./header.module.css"
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = React.useState(false)
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId)
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' })
     }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+    <header className={styles.header}>
       <div className={styles.headerContent}>
         <Link to="/" className={styles.logoContainer}>
           <StaticImage
-            src="../images/logo/logo.png"
+            src="../images/logo/logo.PNG"
             alt="Logo"
             className={styles.logoImage}
             width={30}
@@ -29,11 +25,11 @@ const Header = () => {
           <span className={styles.logoText}>SUN & MER</span>
         </Link>
         <nav className={styles.nav}>
-          <Link to="/works">Works</Link>
-          <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
+          <button onClick={() => scrollToSection('about')}>About</button>
+          <button onClick={() => scrollToSection('works')}>Works</button>
+          <button onClick={() => scrollToSection('posts')}>Post</button>
+          <button onClick={() => scrollToSection('contact')}>Contact</button>
         </nav>
-        <button className={styles.menuButton}>Menu</button>
       </div>
     </header>
   )

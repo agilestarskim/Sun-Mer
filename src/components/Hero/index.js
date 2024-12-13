@@ -1,9 +1,11 @@
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "./hero.module.css"
+import Header from "../header"
 
 const Hero = () => (
-  <section className={styles.hero}>
+  <section id="hero" className={styles.hero}>
+    <Header />
     <div className={styles.imageContainer}>
       <StaticImage
         src="../../images/hero/hero-main.JPG"

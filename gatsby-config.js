@@ -9,10 +9,71 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Sun & Mer`,
+    description: `Sun & Mer Pop Band`,
+    author: `@sun8mer`,
+    image: `/images/OG.JPG`,
+    stats: [
+      {
+        number: "4+",
+        label: "Years of Music"
+      },
+      {
+        number: "50+",
+        label: "Live Shows"
+      },
+      {
+        number: "13+",
+        label: "Original Songs"
+      }
+    ],
+    videos: [
+      { id: 1, title: "사랑으로 우리는", videoId: "xl-GcYQ1N5g" },
+      { id: 2, title: "d!ve", videoId: "pJWD9mWj7V8" },
+      { id: 3, title: "탈(Higher)", videoId: "tm4_dSk3Hg4" },
+      { id: 4, title: "bonnie & clyde", videoId: "rE7wrUSAOXk" },
+      { id: 5, title: "Heart Hurts", videoId: "gg_ICIzyQgc" },    
+      { id: 6, title: "편집증 (Paranoia)", videoId: "BivYmP3YMxk" }
+    ],
+    socialLinks: [
+      {
+        name: "YouTube",
+        url: "https://www.youtube.com/channel/UCElCCdSKstO6m9nhhgHKNdw"
+      },
+      {
+        name: "Spotify",
+        url: "https://open.spotify.com/artist/1GbmCdNlnSjdELYPmh7RZM"
+      },
+      {
+        name: "TikTok",
+        url: "https://www.tiktok.com/@sunandmer"
+      },
+      {
+        name: "SoundCloud",
+        url: "https://soundcloud.com/sunandmer"
+      }
+    ],
+    instagramPosts: [
+      { id: "DBYvy6Jy5pW" },
+      { id: "DBFmiinyH_D" },
+      { id: "C_4bayaSCc1" },
+      { id: "C_hHt_FysD2" },
+      { id: "C_Klu6RSg9D" },
+      { id: "C9uILwaS1s7" },
+      { id: "C7d2jI5JFDZ" },
+      { id: "C5zndt9JEOa" },
+      { id: "C4AiYMDJ7ZV" },
+      { id: "C1Ulhj8puCo" },
+      { id: "Cy5-sbKJsRn" },
+      { id: "Cxit6VBSYjS" }
+    ],
+    contactInfo: {
+      instagram: {
+        username: "@sun8mer",
+        url: "https://www.instagram.com/sun8mer"
+      },
+      bandName: "Sun & Mer"
+    }
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -28,15 +89,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `${__dirname}/src/images/logo/logo.PNG`,
       },
     },
   ],
