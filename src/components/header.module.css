@@ -1,16 +1,18 @@
 .header {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  padding: 1.5rem 5rem;
+  padding: 1.5rem 2rem;
   z-index: 100;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
+  max-width: 1200px;
 }
 
 .headerContent {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -56,10 +58,6 @@
 }
 
 @media (max-width: 768px) {
-  .header {
-    padding: 1.5rem 2rem;
-  }
-
   .nav {
     display: none;
   }
@@ -71,7 +69,5 @@
   
   .logoText {
     font-size: 1.2rem;
-    font-weight: 700;
-    color: #fff;
   }
 }

@@ -43,14 +43,15 @@ const Contact = () => {
             <p>Instagram: <a href={instagram.url} target="_blank" rel="noopener noreferrer" style={{color: '#fff'}}>{instagram.username}</a></p>
           </div>
         </div>
-      </div>   
-      <button className={styles.scrollToTop} onClick={scrollToSection}>
+        <button className={styles.scrollToTop} onClick={scrollToSection}>
         ↑ Top
       </button>
 
       <footer className={styles.footer}>
         <p>&copy; {new Date().getFullYear()} {bandName}. All rights reserved.</p>
-      </footer>      
+      </footer>
+      </div>   
+            
     </section>
   )
 }

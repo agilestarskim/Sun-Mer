@@ -7,7 +7,7 @@
 }
 
 .content {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -51,8 +51,8 @@
 } 
 
 .scrollToTop {
-  background-color: #fff; /* 버튼 배경색 */
-  color: #000; /* 버튼 텍스트 색상 */
+  background-color: #fff;
+  color: #000;
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
@@ -72,10 +72,13 @@
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .footer p {
   color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
   margin: 0;
+  text-align: center;
 } 
